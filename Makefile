@@ -1,10 +1,14 @@
 NAME	=	miniRT
 
 CC		=	cc
+
 CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft
 
 SRC_DIR	=	./src/
-SRCS	=	$(SRC_DIR)main.c
+
+SRCS	=	$(SRC_DIR)main.c	\
+			$(SRC_DIR)panic.c
+
 OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)

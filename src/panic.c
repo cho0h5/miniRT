@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "panic.h"
 
 void	panic(char *error_message)
