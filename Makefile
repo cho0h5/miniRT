@@ -7,7 +7,8 @@ CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft
 SRC_DIR	=	./src/
 
 SRCS	=	$(SRC_DIR)main.c	\
-			$(SRC_DIR)panic.c
+			$(SRC_DIR)panic.c	\
+			$(SRC_DIR)parse.c
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -35,6 +36,6 @@ re:
 	make all
 
 test: all
-	./miniRT
+	./miniRT testcase/testcase1.rt
 
 .PHONY: all clean fclean re test
