@@ -13,7 +13,7 @@
 #ifndef OBJECT_H
 # define OBJECT_H
 
-# include <vector3.h>
+#include "vector3.h"
 
 typedef struct s_ambient
 {
