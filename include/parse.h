@@ -11,6 +11,7 @@ typedef enum e_identifier
 	ID_SPHERE,
 	ID_PLANE,
 	ID_CYLINDER,
+	ID_EMPTY_LINE,
 	ID_UNKNOWN
 }	t_identifier;
 

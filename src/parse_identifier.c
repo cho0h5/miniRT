@@ -20,6 +20,8 @@ t_identifier	parse_identifier(const char *line, size_t *i)
 		id = ID_PLANE;
 	else if (ft_strncmp(word, "cy", 3) == 0)
 		id = ID_CYLINDER;
+	else if (ft_strncmp(word, "\n", 2) == 0)
+		id = ID_EMPTY_LINE;
 	else
 		id = ID_UNKNOWN;
 	free(word);
