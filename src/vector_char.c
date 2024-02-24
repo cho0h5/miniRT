@@ -1,19 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   vector.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: younghoc <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 16:14:34 by younghoc          #+#    #+#             */
-/*   Updated: 2024/02/05 22:00:09 by kyusulee         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <vector.h>
 #include <stdlib.h>
+#include "vector_char.h"
 
-void	init_vector(t_vector *vector)
+void	init_vector_char(t_vector_char *vector)
 {
 	vector->data = malloc(16);
 	if (vector->data == NULL)
@@ -22,7 +10,7 @@ void	init_vector(t_vector *vector)
 	vector->cap = 16;
 }
 
-void	destroy_vector(t_vector *vector)
+void	destroy_vector(t_vector_char *vector)
 {
 	vector->cap = 0;
 	vector->len = 0;
@@ -73,7 +61,7 @@ static void	*ft_realloc(void *addr, size_t old_size, size_t new_size)
 	return (new_addr);
 }
 
-char	*push_back(t_vector *vector, char c)
+char	*push_back_char(t_vector_char *vector, char c)
 {
 	if (vector->len == vector->cap - 1)
 	{

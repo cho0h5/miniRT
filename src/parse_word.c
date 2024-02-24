@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include "libft.h"
-#include "vector.h"
+#include "vector_char.h"
 
 char	*parse_word(const char *line, size_t *i)
 {
-	t_vector	vector;
+	t_vector_char	vector;
 
-	init_vector(&vector);
+	init_vector_char(&vector);
 	while (line[*i] != '\0' && ft_strchr(" \t,", line[*i]) == NULL)
-		push_back(&vector, line[(*i)++]);
-	push_back(&vector, '\0');
+		push_back_char(&vector, line[(*i)++]);
+	push_back_char(&vector, '\0');
 	return (vector.data);
 }

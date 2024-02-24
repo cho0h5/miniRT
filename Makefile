@@ -7,16 +7,18 @@ LDFLAGS	=	-Llibft -lft
 
 SRC_DIR	=	./src/
 
-SRCS	=	$(SRC_DIR)main.c				\
-			$(SRC_DIR)panic.c				\
-			$(SRC_DIR)parse.c				\
-			$(SRC_DIR)parse_line.c			\
-			$(SRC_DIR)parse_word.c			\
-			$(SRC_DIR)parse_identifier.c	\
-			$(SRC_DIR)parse_ambient.c		\
-			$(SRC_DIR)parse_light.c			\
-			$(SRC_DIR)parse_camera.c		\
-			$(SRC_DIR)parse_object.c		\
+SRCS	=	$(SRC_DIR)main.c					\
+			$(SRC_DIR)panic.c					\
+			$(SRC_DIR)vector_char.c				\
+			$(SRC_DIR)vector_char_push_str.c	\
+			$(SRC_DIR)parse.c					\
+			$(SRC_DIR)parse_line.c				\
+			$(SRC_DIR)parse_word.c				\
+			$(SRC_DIR)parse_identifier.c		\
+			$(SRC_DIR)parse_ambient.c			\
+			$(SRC_DIR)parse_light.c				\
+			$(SRC_DIR)parse_camera.c			\
+			$(SRC_DIR)parse_object.c			\
 			$(SRC_DIR)environment.c
 
 OBJS	=	$(SRCS:.c=.o)
