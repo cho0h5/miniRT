@@ -4,7 +4,7 @@
 #include "get_next_line.h"
 #include "panic.h"
 
-void	parse(t_environment *env, char *filename)
+void	parse(t_environment *env, const char *filename)
 {
 	int		fd;
 	char	*line;

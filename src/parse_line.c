@@ -1,7 +1,7 @@
 #include "parse.h"
 #include "environment.h"
 
-void	parse_line(t_environment *env, char *line)
+void	parse_line(t_environment *env, const char *line)
 {
 	size_t			i;
 	t_identifier	id;
@@ -11,11 +11,11 @@ void	parse_line(t_environment *env, char *line)
 	if (id == ID_UNKNOWN)
 		return ;
 	else if (id == ID_AMBIENT)
-		parse_ambient(&env->ambients);
+		parse_ambient(&env->ambients, line, &i);
 	else if (id == ID_CAMERA)
-		parse_camera(&env->cameras);
+		parse_camera(&env->cameras, line, &i);
 	else if (id == ID_LIGHT)
-		parse_light(&env->lights);
+		parse_light(&env->lights, line, &i);
 	else
-		parse_object(&env->objects);
+		parse_object(&env->objects, line, &i);
 }

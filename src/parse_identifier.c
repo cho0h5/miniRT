@@ -1,7 +1,7 @@
 #include "libft.h"
 #include "parse.h"
 
-t_identifier	parse_identifier(char *line, size_t *i)
+t_identifier	parse_identifier(const char *line, size_t *i)
 {
 	char			*word;
 	t_identifier	id;
