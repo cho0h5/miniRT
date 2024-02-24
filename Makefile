@@ -19,6 +19,7 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)parse_light.c				\
 			$(SRC_DIR)parse_camera.c			\
 			$(SRC_DIR)parse_object.c			\
+			$(SRC_DIR)parse_utils.c			\
 			$(SRC_DIR)environment.c
 
 OBJS	=	$(SRCS:.c=.o)

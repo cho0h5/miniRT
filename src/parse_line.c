@@ -2,12 +2,6 @@
 #include "parse.h"
 #include "environment.h"
 
-static void	skip_space(char *line, int *i)
-{
-	while (line[*i] != '\0' && ft_strchr(" \t", line[*i]) != NULL)
-		(*i)++;
-}
-
 void	parse_line(t_environment *env, char *line)
 {
 	int				i;

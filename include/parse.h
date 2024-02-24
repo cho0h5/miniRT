@@ -21,4 +21,6 @@ void			parse_camera(t_list **cameras);
 void			parse_light(t_list **lights);
 void			parse_object(t_list **objects);
 
+void			skip_space(char *line, int *i);
+
 #endif
