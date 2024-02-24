@@ -23,5 +23,6 @@ t_identifier	parse_identifier(const char *line, size_t *i)
 	else
 		id = ID_UNKNOWN;
 	free(word);
+	skip_space(line, i);
 	return (id);
 }
