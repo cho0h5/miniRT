@@ -3,6 +3,7 @@ NAME	=	miniRT
 CC		=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft -fsanitize=address -g
+LDFLAGS	=	-Llibft -lft
 
 SRC_DIR	=	./src/
 
@@ -21,11 +22,9 @@ OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) libft/libft.a
-	$(CC) $(CFLAGS) -o $(NAME) $^ -Llibft -lft
-
-libft/libft.a:
+$(NAME): $(OBJS)
 	make -C libft
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
