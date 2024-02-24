@@ -1,5 +1,4 @@
 #include "libft.h"
-#include "panic.h"
 #include "parse.h"
 
 t_identifier	parse_identifier(char *line, size_t *i)
@@ -8,7 +7,6 @@ t_identifier	parse_identifier(char *line, size_t *i)
 	t_identifier	id;
 
 	skip_space(line, i);
-	id = ID_AMBIENT;
 	word = parse_word(line, i);
 	if (ft_strncmp(word, "A", 2) == 0)
 		id = ID_AMBIENT;
@@ -23,7 +21,7 @@ t_identifier	parse_identifier(char *line, size_t *i)
 	else if (ft_strncmp(word, "cy", 3) == 0)
 		id = ID_CYLINDER;
 	else
-		panic("unhandled identifier");
+		id = ID_UNKNOWN;
 	free(word);
 	return (id);
 }

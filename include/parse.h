@@ -10,7 +10,8 @@ typedef enum e_identifier
 	ID_LIGHT,
 	ID_SPHERE,
 	ID_PLANE,
-	ID_CYLINDER
+	ID_CYLINDER,
+	ID_UNKNOWN
 }	t_identifier;
 
 void			parse(t_environment *env, char *filename);

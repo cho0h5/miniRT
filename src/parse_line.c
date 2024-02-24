@@ -1,4 +1,3 @@
-#include "libft.h"
 #include "parse.h"
 #include "environment.h"
 
@@ -9,7 +8,9 @@ void	parse_line(t_environment *env, char *line)
 
 	i = 0;
 	id = parse_identifier(line, &i);
-	if (id == ID_AMBIENT)
+	if (id == ID_UNKNOWN)
+		return ;
+	else if (id == ID_AMBIENT)
 		parse_ambient(&env->ambients);
 	else if (id == ID_CAMERA)
 		parse_camera(&env->cameras);
