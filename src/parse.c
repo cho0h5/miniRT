@@ -15,7 +15,7 @@ void	parse(t_environment *env, char *filename)
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
-		line = get_next_line(fd);
 		parse_line(env, line);
+		line = get_next_line(fd);
 	}
 }
