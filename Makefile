@@ -11,6 +11,7 @@ SRCS	=	$(SRC_DIR)main.c				\
 			$(SRC_DIR)panic.c				\
 			$(SRC_DIR)parse.c				\
 			$(SRC_DIR)parse_line.c			\
+			$(SRC_DIR)parse_word.c			\
 			$(SRC_DIR)parse_identifier.c	\
 			$(SRC_DIR)parse_ambient.c		\
 			$(SRC_DIR)parse_light.c			\
