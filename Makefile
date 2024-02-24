@@ -2,13 +2,20 @@ NAME	=	miniRT
 
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft
+CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft -fsanitize=address -g
 
 SRC_DIR	=	./src/
 
-SRCS	=	$(SRC_DIR)main.c	\
-			$(SRC_DIR)panic.c	\
-			$(SRC_DIR)parse.c
+SRCS	=	$(SRC_DIR)main.c				\
+			$(SRC_DIR)panic.c				\
+			$(SRC_DIR)parse.c				\
+			$(SRC_DIR)parse_line.c			\
+			$(SRC_DIR)parse_identifier.c	\
+			$(SRC_DIR)parse_ambient.c		\
+			$(SRC_DIR)parse_light.c			\
+			$(SRC_DIR)parse_camera.c		\
+			$(SRC_DIR)parse_object.c		\
+			$(SRC_DIR)environment.c
 
 OBJS	=	$(SRCS:.c=.o)
 
