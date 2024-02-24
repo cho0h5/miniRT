@@ -4,11 +4,10 @@
 
 void	parse_line(t_environment *env, char *line)
 {
-	int				i;
+	size_t			i;
 	t_identifier	id;
 
 	i = 0;
-	skip_space(line, &i);
 	id = parse_identifier(line, &i);
 	if (id == ID_AMBIENT)
 		parse_ambient(&env->ambients);
