@@ -4,16 +4,6 @@
 #include "panic.h"
 #include "parse.h"
 
-static t_list	*create_ambient_node(t_ambient *ambient)
-{
-	t_list		*node;
-
-	node = ft_lstnew(ambient);
-	if (node == NULL)
-		panic("failed to malloc");
-	return (node);
-}
-
 void	parse_ambient(t_list **ambients, const char *line, size_t *i)
 {
 	t_ambient	*ambient;
@@ -25,6 +15,8 @@ void	parse_ambient(t_list **ambients, const char *line, size_t *i)
 	parse_decimal(&ambient->ratio, line, i);
 	parse_vector3(&ambient->color, line, i);
 	parse_newline(line, i);
-	node = create_ambient_node(ambient);
+	node = ft_lstnew(ambient);
+	if (node == NULL)
+		panic("failed to malloc");
 	ft_lstadd_back(ambients, node);
 }
