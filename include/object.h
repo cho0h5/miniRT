@@ -37,9 +37,9 @@ typedef struct s_light
 
 typedef enum e_object_category
 {
-	PLANE,
-	SPHERE,
-	CYLINDER,
+	OBJ_PLANE,
+	OBJ_SPHERE,
+	OBJ_CYLINDER,
 }	t_object_category;
 
 typedef struct s_object
