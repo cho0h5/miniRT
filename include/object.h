@@ -42,12 +42,6 @@ typedef enum e_object_category
 	OBJ_CYLINDER,
 }	t_object_category;
 
-typedef struct s_object
-{
-	t_object_category	category;
-	void				*content;
-}	t_object;
-
 typedef struct s_plane
 {
 	t_vector3	position;
@@ -74,7 +68,6 @@ typedef struct s_cylinder
 void	ambient_print(const t_ambient *ambient);
 void	camera_print(const t_camera *camera);
 void	light_print(const t_light *light);
-void	object_print(const t_object *object);
 void	plane_print(const t_plane *plane);
 void	sphere_print(const t_sphere *sphere);
 void	cylinder_print(const t_cylinder *cylinder);
