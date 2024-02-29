@@ -15,9 +15,9 @@ t_identifier	parse_identifier(const char *line, size_t *i)
 	else if (ft_strncmp(word, "L", 2) == 0)
 		id = ID_LIGHT;
 	else if (ft_strncmp(word, "pl", 3) == 0)
-		id = ID_SPHERE;
-	else if (ft_strncmp(word, "sp", 3) == 0)
 		id = ID_PLANE;
+	else if (ft_strncmp(word, "sp", 3) == 0)
+		id = ID_SPHERE;
 	else if (ft_strncmp(word, "cy", 3) == 0)
 		id = ID_CYLINDER;
 	else if (ft_strncmp(word, "\n", 2) == 0)
