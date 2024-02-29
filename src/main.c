@@ -14,4 +14,5 @@ int	main(int argc, char **argv)
 
 	ambient_print(env.ambients->content);
 	camera_print(env.cameras->content);
+	light_print(env.lights->content);
 }
