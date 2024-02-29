@@ -3,7 +3,7 @@
 
 void	object_print(const t_object_category *object_category)
 {
-	const void	*object = object_category + sizeof(t_object_category);
+	const void	*object = (void *)object_category + sizeof(t_object_category);
 
 	if (*object_category == OBJ_PLANE)
 		plane_print(object);

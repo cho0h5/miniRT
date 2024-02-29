@@ -20,7 +20,7 @@ void	parse_cylinder(t_list **objects, const char *line, size_t *i)
 	parse_decimal(&cylinder->height, line, i);
 	parse_vector3(&cylinder->color, line, i);
 	parse_newline(line, i);
-	node = ft_lstnew(cylinder);
+	node = ft_lstnew(category);
 	if (node == NULL)
 		panic("failed to malloc");
 	ft_lstadd_back(objects, node);

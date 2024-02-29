@@ -18,7 +18,7 @@ void	parse_sphere(t_list **objects, const char *line, size_t *i)
 	parse_decimal(&sphere->diameter, line, i);
 	parse_vector3(&sphere->color, line, i);
 	parse_newline(line, i);
-	node = ft_lstnew(sphere);
+	node = ft_lstnew(category);
 	if (node == NULL)
 		panic("failed to malloc");
 	ft_lstadd_back(objects, node);

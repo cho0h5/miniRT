@@ -18,7 +18,7 @@ void	parse_plane(t_list **objects, const char *line, size_t *i)
 	parse_vector3(&plane->normal, line, i);
 	parse_vector3(&plane->color, line, i);
 	parse_newline(line, i);
-	node = ft_lstnew(plane);
+	node = ft_lstnew(category);
 	if (node == NULL)
 		panic("failed to malloc");
 	ft_lstadd_back(objects, node);
