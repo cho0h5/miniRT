@@ -25,6 +25,7 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)parse_vector3.c			\
 			$(SRC_DIR)parse_comma.c				\
 			$(SRC_DIR)parse_newline.c			\
+			$(SRC_DIR)object_ambient_print.c	\
 			$(SRC_DIR)environment.c
 
 OBJS	=	$(SRCS:.c=.o)
