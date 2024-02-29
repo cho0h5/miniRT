@@ -7,7 +7,7 @@ void	sphere_print(const t_sphere *sphere)
 	printf("- position: ");
 	vec3_print(sphere->position);
 	printf("\n");
-	printf("- diameter: %f\n", sphere->diameter);
+	printf("- diameter: %.2f\n", sphere->diameter);
 	printf("- color: ");
 	vec3_print(sphere->color);
 	printf("\n");

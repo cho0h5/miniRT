@@ -11,5 +11,5 @@ void	camera_print(const t_camera *camera)
 	printf("- orientation: ");
 	vec3_print(camera->orientation);
 	printf("\n");
-	printf("- fov: %f\n", camera->fov);
+	printf("- fov: %.2f\n", camera->fov);
 }

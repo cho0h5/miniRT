@@ -3,5 +3,5 @@
 
 void	vec3_print(const t_vector3 vec)
 {
-	printf("(%f, %f, %f)", vec.x, vec.y, vec.z);
+	printf("(%.2f, %.2f, %.2f)", vec.x, vec.y, vec.z);
 }
