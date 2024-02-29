@@ -12,5 +12,5 @@ void	object_print(const t_object_category *object_category)
 	else if (*object_category == OBJ_CYLINDER)
 		cylinder_print(object);
 	else
-		panic("failed to print object: unexpected category");
+		panic("failed to print object: unexpected category\n");
 }

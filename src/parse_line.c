@@ -20,5 +20,5 @@ void	parse_line(t_environment *env, const char *line)
 	else if (id == ID_LIGHT)
 		parse_light(&env->lights, line, &i);
 	else
-		parse_object(&env->objects, line, &i);
+		parse_object(&env->objects, line, &i, id);
 }
