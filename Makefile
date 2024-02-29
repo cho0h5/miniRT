@@ -20,6 +20,9 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)parse_light.c				\
 			$(SRC_DIR)parse_camera.c			\
 			$(SRC_DIR)parse_object.c			\
+			$(SRC_DIR)parse_plane.c				\
+			$(SRC_DIR)parse_sphere.c			\
+			$(SRC_DIR)parse_cylinder.c			\
 			$(SRC_DIR)parse_utils.c				\
 			$(SRC_DIR)parse_decimal.c			\
 			$(SRC_DIR)parse_vector3.c			\
