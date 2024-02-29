@@ -9,6 +9,7 @@ SRC_DIR	=	./src/
 
 SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)panic.c					\
+			$(SRC_DIR)vector3_print.c			\
 			$(SRC_DIR)vector_char.c				\
 			$(SRC_DIR)vector_char_push_str.c	\
 			$(SRC_DIR)parse.c					\

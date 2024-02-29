@@ -24,4 +24,6 @@ t_vector3	vector3(double x, double y, double z);
 double		magnitude(const t_vector3 vec);
 t_vector3	normalize(const t_vector3 vec);
 
+void		vec3_print(const t_vector3 vec);
+
 #endif
