@@ -13,7 +13,7 @@ void	parse_sphere(t_list **objects, const char *line, size_t *i)
 	if (category == NULL)
 		panic("failed to malloc");
 	*category = OBJ_SPHERE;
-	sphere = (t_sphere *)(category + sizeof(t_object_category));
+	sphere = (t_sphere *)((void *)category + sizeof(t_object_category));
 	parse_vector3(&sphere->position, line, i);
 	parse_decimal(&sphere->diameter, line, i);
 	parse_vector3(&sphere->color, line, i);

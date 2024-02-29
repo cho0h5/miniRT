@@ -13,7 +13,7 @@ void	parse_cylinder(t_list **objects, const char *line, size_t *i)
 	if (category == NULL)
 		panic("failed to malloc");
 	*category = OBJ_CYLINDER;
-	cylinder = (t_cylinder *)(category + sizeof(t_object_category));
+	cylinder = (t_cylinder *)((void *)category + sizeof(t_object_category));
 	parse_vector3(&cylinder->position, line, i);
 	parse_vector3(&cylinder->axis, line, i);
 	parse_decimal(&cylinder->diameter, line, i);
