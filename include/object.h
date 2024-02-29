@@ -69,6 +69,14 @@ typedef struct s_cylinder
 	double		diameter;
 	double		height;
 	t_vector3	color;
-}	t_sylinder;
+}	t_cylinder;
+
+void	ambient_print(const t_ambient *ambient);
+void	camera_print(const t_camera *camera);
+void	light_print(const t_light *light);
+void	object_print(const t_object *object);
+void	plane_print(const t_plane *plane);
+void	sphere_print(const t_sphere *sphere);
+void	cylinder_print(const t_cylinder *cylinder);
 
 #endif
