@@ -3,7 +3,7 @@ NAME	=	miniRT
 CC		=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft -fsanitize=address -g
-LDFLAGS	=	-Llibft -lft
+LDFLAGS	=	-Llibft -lft -lmlx -framework OpenGL -framework Appkit
 
 SRC_DIR	=	./src/
 
@@ -47,6 +47,7 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)object_sphere_print.c		\
 			$(SRC_DIR)object_cylinder_print.c	\
 			$(SRC_DIR)screen_pixel_to_ray.c		\
+			$(SRC_DIR)screen_draw.c		\
 			$(SRC_DIR)environment.c
 
 OBJS	=	$(SRCS:.c=.o)
