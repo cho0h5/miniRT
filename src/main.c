@@ -29,9 +29,10 @@ int	main(int argc, char **argv)
 		node = node->next;
 	}
 
+	t_rotate_info	info = init_rotate_info(env.cameras->content);
 	for (int j = 0; j < WIDTH; j++) {
 		for (int i = 0; i < WIDTH; i++) {
-			t_vector3 ray = pixel_to_ray(env.cameras->content, i, j);
+			t_vector3 ray = pixel_to_ray(env.cameras->content, &info, i, j);
 			vec3_print(ray);
 			printf("\n");
 		}
