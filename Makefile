@@ -46,6 +46,7 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)object_plane_print.c		\
 			$(SRC_DIR)object_sphere_print.c		\
 			$(SRC_DIR)object_cylinder_print.c	\
+			$(SRC_DIR)object_get_closest.c		\
 			$(SRC_DIR)screen_pixel_to_ray.c		\
 			$(SRC_DIR)screen_draw.c				\
 			$(SRC_DIR)screen_destroy.c			\
