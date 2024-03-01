@@ -12,8 +12,8 @@ static void	put_mlx_pixel(t_mlx_image *data, int x, int y, int color)
 
 void	draw(t_environment *env)
 {
-	t_rotate_info	rotate_info = init_rotate_info(env->cameras->content);
-	t_vector3		ray;
+	const t_rotate_info	rotate_info = init_rotate_info(env->cameras->content);
+	t_vector3			ray;
 
 	for (int j = 0; j < WIDTH; j++) {
 		for (int i = 0; i < WIDTH; i++) {
