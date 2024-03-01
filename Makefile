@@ -51,6 +51,10 @@ SRCS	=	$(SRC_DIR)main.c						\
 			$(SRC_DIR)object_plane_distance.c		\
 			$(SRC_DIR)object_sphere_distance.c		\
 			$(SRC_DIR)object_cylinder_distance.c	\
+			$(SRC_DIR)object_color.c				\
+			$(SRC_DIR)object_plane_color.c			\
+			$(SRC_DIR)object_sphere_color.c			\
+			$(SRC_DIR)object_cylinder_color.c		\
 			$(SRC_DIR)screen_pixel_to_ray.c			\
 			$(SRC_DIR)screen_draw.c					\
 			$(SRC_DIR)screen_destroy.c				\

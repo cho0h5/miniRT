@@ -82,7 +82,7 @@ double				plane_distance(const t_vector3 pos, const t_vector3 ray, t_object_cate
 double				sphere_distance(const t_vector3 pos, const t_vector3 ray, t_object_category *sphere);
 double				cylinder_distance(const t_vector3 pos, const t_vector3 ray, t_object_category *cylinder);
 
-unsigned int		get_object_color(const t_object_category *object);
+unsigned int		get_object_color(const t_object_category *object_category);
 unsigned int		get_plane_color(const t_plane *plane);
 unsigned int		get_sphere_color(const t_sphere *sphere);
 unsigned int		get_cylinder_color(const t_cylinder *cylinder);
