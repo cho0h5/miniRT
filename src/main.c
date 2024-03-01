@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	init_environment(&env);
 	parse(&env, argv[1]);
 
-
 	// for debug
 	ambient_print(env.ambients->content);
 	camera_print(env.cameras->content);
