@@ -1,9 +1,14 @@
 #include "object.h"
-#include "panic.h"
 
 unsigned int	get_sphere_color(const t_sphere *sphere)
 {
-	(void)sphere;
-	panic("unimplemented: get_sphere_color");
-	return (0x0);
+	unsigned int	color;
+
+	color = 0;
+	color = (char)sphere->color.x;
+	color = color << 8;
+	color = (char)sphere->color.y;
+	color = color << 8;
+	color = (char)sphere->color.z;
+	return (color);
 }

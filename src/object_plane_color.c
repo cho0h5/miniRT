@@ -1,9 +1,14 @@
 #include "object.h"
-#include "panic.h"
 
 unsigned int	get_plane_color(const t_plane *plane)
 {
-	(void)plane;
-	panic("unimplemented: get_plane_color");
-	return (0x0);
+	unsigned int	color;
+
+	color = 0;
+	color = (char)plane->color.x;
+	color = color << 8;
+	color = (char)plane->color.y;
+	color = color << 8;
+	color = (char)plane->color.z;
+	return (color);
 }
