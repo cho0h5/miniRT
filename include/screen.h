@@ -11,5 +11,6 @@
 t_vector3	pixel_to_ray(const t_camera *camera, const t_rotate_info *info, int i, int j);
 void		draw(t_environment *env);
 int			destroy_screen(t_environment *env);
+int			key_hook(int keycode, t_environment *env);
 
 #endif

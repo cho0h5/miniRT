@@ -13,6 +13,7 @@ int	main(int argc, char **argv)
 	init_environment(&env);
 	parse(&env, argv[1]);
 	draw(&env);
+	mlx_key_hook(env.mlx_window, key_hook, &env);
 	mlx_hook(env.mlx_window, ON_DESTROY, 0, destroy_screen, &env);
 	mlx_loop(env.mlx);
 }
