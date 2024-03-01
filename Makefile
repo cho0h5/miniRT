@@ -9,7 +9,17 @@ SRC_DIR	=	./src/
 
 SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)panic.c					\
+			$(SRC_DIR)vector3.c					\
 			$(SRC_DIR)vector3_print.c			\
+			$(SRC_DIR)vector3_add.c				\
+			$(SRC_DIR)vector3_angle.c			\
+			$(SRC_DIR)vector3_cross.c			\
+			$(SRC_DIR)vector3_dot.c				\
+			$(SRC_DIR)vector3_magnitude.c		\
+			$(SRC_DIR)vector3_normalize.c		\
+			$(SRC_DIR)vector3_scale.c			\
+			$(SRC_DIR)vector3_subtract.c		\
+			$(SRC_DIR)vector3_scale.c			\
 			$(SRC_DIR)vector_char.c				\
 			$(SRC_DIR)vector_char_push_str.c	\
 			$(SRC_DIR)parse.c					\
@@ -31,7 +41,7 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)object_ambient_print.c	\
 			$(SRC_DIR)object_camera_print.c		\
 			$(SRC_DIR)object_light_print.c		\
-			$(SRC_DIR)object_print.c		\
+			$(SRC_DIR)object_print.c			\
 			$(SRC_DIR)object_plane_print.c		\
 			$(SRC_DIR)object_sphere_print.c		\
 			$(SRC_DIR)object_cylinder_print.c	\
