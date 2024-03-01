@@ -17,8 +17,10 @@ t_vector3	rotate(const t_rotate_info *info, const t_vector3 vec)
 {
 	t_vector3	tmp1;
 	t_vector3	tmp2;
+	t_vector3	tmp3;
 
-	tmp1 = scale(vec, info->cos_term);
-	tmp2 = scale(cross(info->axis_term, vec), info->sin_term);
-	return (add(tmp1, tmp2));
+	tmp1 = scale(info->axis_term, dot(info->axis_term, vec) * (1 - info->cos_term));
+	tmp2 = scale(vec, info->cos_term);
+	tmp3 = scale(cross(info->axis_term, vec), info->sin_term);
+	return (add(tmp1, add(tmp2, tmp3)));
 }
