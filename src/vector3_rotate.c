@@ -4,7 +4,7 @@
 
 t_rotate_info	init_rotate_info(const t_camera *camera)
 {
-	const double	theta = angle(camera->orientation, vector3(0, 1, 0));
+	const double	theta = acos(angle(camera->orientation, vector3(0, 1, 0)));
 	t_rotate_info	info;
 
 	info.axis_term = cross(camera->orientation, vector3(0, 1, 0));
