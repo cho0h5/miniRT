@@ -14,7 +14,9 @@ void	draw(t_environment *env)
 {
 	const t_rotate_info	rotate_info = init_rotate_info(env->cameras->content);
 	t_vector3			ray;
+	double				closest_distance;
 
+	closest_distance = DOUBLE_MAX;
 	for (int j = 0; j < WIDTH; j++) {
 		for (int i = 0; i < WIDTH; i++) {
 			ray = pixel_to_ray(env->cameras->content, &rotate_info, i, j);

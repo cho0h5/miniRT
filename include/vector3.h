@@ -13,6 +13,8 @@
 #ifndef VECTOR3_H
 # define VECTOR3_H
 
+# define DOUBLE_MAX 1.79e+308
+
 typedef struct s_vector3
 {
 	double	x;
