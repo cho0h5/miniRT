@@ -65,12 +65,14 @@ typedef struct s_cylinder
 	t_vector3	color;
 }	t_cylinder;
 
-void	ambient_print(const t_ambient *ambient);
-void	camera_print(const t_camera *camera);
-void	light_print(const t_light *light);
-void	object_print(const t_object_category *object_category);
-void	plane_print(const t_plane *plane);
-void	sphere_print(const t_sphere *sphere);
-void	cylinder_print(const t_cylinder *cylinder);
+void			ambient_print(const t_ambient *ambient);
+void			camera_print(const t_camera *camera);
+void			light_print(const t_light *light);
+void			object_print(const t_object_category *object_category);
+void			plane_print(const t_plane *plane);
+void			sphere_print(const t_sphere *sphere);
+void			cylinder_print(const t_cylinder *cylinder);
+
+t_rotate_info	init_rotate_info(const t_camera *camera);
 
 #endif
