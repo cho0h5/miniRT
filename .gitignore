@@ -1,7 +1,6 @@
 compile_flags.txt
 *.o
 *.a
-testcase/
 miniRT
 .DS_Store
 minilibx
