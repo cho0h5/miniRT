@@ -3,6 +3,10 @@
 #include "object.h"
 #include "panic.h"
 #include "parse.h"
+#include "screen.h"
+#include "vector3.h"
+
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -23,5 +27,13 @@ int	main(int argc, char **argv)
 	while (node) {
 		object_print(node->content);
 		node = node->next;
+	}
+
+	for (int j = 0; j < WIDTH; j++) {
+		for (int i = 0; i < WIDTH; i++) {
+			t_vector3 ray = pixel_to_ray(env.cameras->content, i, j);
+			vec3_print(ray);
+			printf("\n");
+		}
 	}
 }
