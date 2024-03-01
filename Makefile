@@ -50,7 +50,8 @@ SRCS	=	$(SRC_DIR)main.c					\
 			$(SRC_DIR)screen_draw.c				\
 			$(SRC_DIR)screen_destroy.c			\
 			$(SRC_DIR)screen_key_hook.c			\
-			$(SRC_DIR)environment.c
+			$(SRC_DIR)environment.c				\
+			$(SRC_DIR)environment_get_camera.c
 
 OBJS	=	$(SRCS:.c=.o)
 
