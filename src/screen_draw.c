@@ -1,4 +1,5 @@
 #include <mlx.h>
+#include "object.h"
 #include "screen.h"
 #include "vector3.h"
 
@@ -14,14 +15,13 @@ void	draw(t_environment *env)
 {
 	const t_rotate_info	rotate_info = init_rotate_info(env->cameras->content);
 	t_vector3			ray;
-	double				closest_distance;
+	t_object_category	*object;
 
-	closest_distance = DOUBLE_MAX;
 	for (int j = 0; j < WIDTH; j++) {
 		for (int i = 0; i < WIDTH; i++) {
 			ray = pixel_to_ray(env->cameras->content, &rotate_info, i, j);
-			(void)ray;
-			put_mlx_pixel(&env->image, i, j, 0xffffff);
+			object = get_closest_object(ray, env->objects);
+			put_mlx_pixel(&env->image, i, j, get_object_color(object));
 		}
 	}
 	mlx_put_image_to_window(env->mlx, env->mlx_window, env->image.image, 0, 0);
