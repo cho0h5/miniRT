@@ -13,20 +13,12 @@ t_rotate_info	init_rotate_info(const t_camera *camera)
 	return (info);
 }
 
-#include <stdio.h>
 t_vector3	rotate(const t_rotate_info *info, const t_vector3 vec)
 {
 	t_vector3	tmp1;
 	t_vector3	tmp2;
 
-	printf("\n");
-	printf("normalized vec: ");
-	vec3_print(vec);
-	printf("\n");
 	tmp1 = scale(vec, info->cos_term);
 	tmp2 = scale(cross(info->axis_term, vec), info->sin_term);
-	printf("tmp2: ");
-	vec3_print(tmp2);
-	printf("\n");
 	return (add(tmp1, tmp2));
 }
