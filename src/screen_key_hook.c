@@ -2,6 +2,7 @@
 #include "screen.h"
 #include "environment.h"
 #include "vector3.h"
+#include "panic.h"
 
 static void	move_camera(int keycode, t_environment *env)
 {
@@ -16,6 +17,12 @@ static void	move_camera(int keycode, t_environment *env)
 		get_camera(env)->position = add(pos, scale(dir, 10));
 	else if (keycode == KEY_S)
 		get_camera(env)->position = add(pos, scale(dir, -10));
+	else if (keycode == KEY_A)
+		get_camera(env)->position = add(pos, scale(normalize(cross(vector3(0, 0, 1), dir)), 10));
+	else if (keycode == KEY_D)
+		get_camera(env)->position = add(pos, scale(normalize(cross(vector3(0, 0, 1), dir)), -10));
+	else
+		panic("failed to move camera: unexpected key");
 }
 
 #include <stdio.h>
