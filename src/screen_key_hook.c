@@ -5,14 +5,17 @@
 
 static void	move_camera(int keycode, t_environment *env)
 {
+	const t_vector3	pos = get_camera(env)->position;
+	const t_vector3	dir = get_camera(env)->orientation;
+
 	if (keycode == KEY_Q)
 		get_camera(env)->position.z -= 10;
 	else if (keycode == KEY_E)
 		get_camera(env)->position.z += 10;
 	else if (keycode == KEY_W)
-		get_camera(env)->position = add(get_camera(env)->position, scale(get_camera(env)->orientation, 10));
+		get_camera(env)->position = add(pos, scale(dir, 10));
 	else if (keycode == KEY_S)
-		get_camera(env)->position = add(get_camera(env)->position, scale(get_camera(env)->orientation, -10));
+		get_camera(env)->position = add(pos, scale(dir, -10));
 }
 
 #include <stdio.h>
