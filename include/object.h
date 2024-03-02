@@ -77,10 +77,10 @@ void				cylinder_print(const t_cylinder *cylinder);
 t_rotate_info		init_rotate_info(const t_camera *camera);
 
 t_object_category	*get_closest_object(const t_vector3 pos, const t_vector3 ray, t_list *objects);
-double				object_distance(const t_vector3 pos, const t_vector3 ray, t_object_category *object);
-double				plane_distance(const t_vector3 pos, const t_vector3 ray, t_object_category *plane);
-double				sphere_distance(const t_vector3 pos, const t_vector3 ray, t_object_category *sphere);
-double				cylinder_distance(const t_vector3 pos, const t_vector3 ray, t_object_category *cylinder);
+double				object_distance(const t_vector3 pos, const t_vector3 ray, const t_object_category *object_category);
+double				plane_distance(const t_vector3 pos, const t_vector3 ray, const t_object_category *plane);
+double				sphere_distance(const t_vector3 pos, const t_vector3 ray, const t_object_category *sphere);
+double				cylinder_distance(const t_vector3 pos, const t_vector3 ray, const t_object_category *cylinder);
 
 unsigned int		get_object_color(const t_object_category *object_category);
 unsigned int		get_plane_color(const t_plane *plane);
