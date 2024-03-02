@@ -8,7 +8,7 @@ double	plane_distance(const t_vector3 pos, const t_vector3 ray, const t_plane *p
 	const double	denominator = dot(ray, plane->normal);
 	const double	distance = numerator / denominator;
 
-	if (distance < 0)
+	if (distance <= 0)
 		return (DOUBLE_MAX);
 	return (distance);
 }
