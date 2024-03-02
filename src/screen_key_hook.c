@@ -25,10 +25,8 @@ static void	move_camera(int keycode, t_environment *env)
 		panic("failed to move camera: unexpected key");
 }
 
-#include <stdio.h>
 int	key_hook(int keycode, t_environment *env)
 {
-	printf("key: %d\n", keycode);
 	if (keycode == KEY_ESC)
 		destroy_screen(env);
 	else if (keycode == KEY_Q
