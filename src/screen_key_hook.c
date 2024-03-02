@@ -1,6 +1,7 @@
 #include <mlx.h>
 #include "screen.h"
 #include "environment.h"
+#include "vector3.h"
 
 static void	move_camera(int keycode, t_environment *env)
 {
@@ -8,6 +9,10 @@ static void	move_camera(int keycode, t_environment *env)
 		get_camera(env)->position.z -= 10;
 	else if (keycode == KEY_E)
 		get_camera(env)->position.z += 10;
+	else if (keycode == KEY_W)
+		get_camera(env)->position = add(get_camera(env)->position, scale(get_camera(env)->orientation, 10));
+	else if (keycode == KEY_S)
+		get_camera(env)->position = add(get_camera(env)->position, scale(get_camera(env)->orientation, -10));
 }
 
 #include <stdio.h>
