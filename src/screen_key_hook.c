@@ -1,4 +1,6 @@
+#include <math.h>
 #include <mlx.h>
+#include "object.h"
 #include "screen.h"
 #include "environment.h"
 #include "vector3.h"
@@ -25,27 +27,33 @@ static void	move_camera(int keycode, t_environment *env)
 		panic("failed to move camera: unexpected key");
 }
 
+#include <stdio.h>
+static void	rotate_camera(int keycode, t_environment *env)
+{
+printf("key: %d\n", keycode);
+	const t_vector3	dir = get_camera(env)->orientation;
+
+	if (keycode == KEY_UP)
+		panic("unimplemented");
+	else if (keycode == KEY_DOWN)
+		panic("unimplemented");
+	else if (keycode == KEY_LEFT)
+		get_camera(env)->orientation = rotate2(vector3(0, 0, 1), 10.0 / 180 * M_PI, dir);
+	else if (keycode == KEY_RIGHT)
+		get_camera(env)->orientation = rotate2(vector3(0, 0, 1), -10.0 / 180 * M_PI, dir);
+}
+
 int	key_hook(int keycode, t_environment *env)
 {
 	if (keycode == KEY_ESC)
 		destroy_screen(env);
-	else if (keycode == KEY_Q
-		|| keycode == KEY_W
-		|| keycode == KEY_E
-		|| keycode == KEY_A
-		|| keycode == KEY_S
-		|| keycode == KEY_D)
+	else if (keycode == KEY_Q || keycode == KEY_E
+		|| keycode == KEY_W || keycode == KEY_S
+		|| keycode == KEY_A || keycode == KEY_D)
 		move_camera(keycode, env);
-//	else if (keycode == 123)
-//		env->x -= 100 / env->zoom / 1080 * 4;
-//	else if (keycode == 124)
-//		env->x += 100 / env->zoom / 1080 * 4;
-//	else if (keycode == 125)
-//		env->y -= 100 / env->zoom / 1080 * 4;
-//	else if (keycode == 126)
-//		env->y += 100 / env->zoom / 1080 * 4;
-//	else if (18 <= keycode && keycode <= 20)
-//		env->color = (keycode - 18) % 3;
+	else if (keycode == KEY_UP || keycode == KEY_DOWN
+		|| keycode == KEY_LEFT || keycode == KEY_RIGHT)
+		rotate_camera(keycode, env);
 	draw(env);
 	return (0);
 }

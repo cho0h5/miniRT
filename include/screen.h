@@ -15,10 +15,10 @@
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
-# define KEY_UP 123
-# define KEY_DOWN 124
-# define KEY_LEFT 125
-# define KEY_RIGHT 126
+# define KEY_UP 126
+# define KEY_DOWN 125
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
 
 t_vector3	pixel_to_ray(const t_camera *camera, const t_rotate_info *info, int i, int j);
 void		draw(t_environment *env);
