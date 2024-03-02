@@ -22,7 +22,10 @@ void	draw(t_environment *env)
 		for (int i = 0; i < WIDTH; i++) {
 			ray = pixel_to_ray(env->cameras->content, &rotate_info, i, j);
 			object = get_closest_object(get_camera(env)->position, ray, env->objects);
-			put_mlx_pixel(&env->image, i, j, get_object_color(object));
+			if (object == NULL)
+				put_mlx_pixel(&env->image, i, j, 0);
+			else
+				put_mlx_pixel(&env->image, i, j, get_object_color(object));
 		}
 	}
 	mlx_put_image_to_window(env->mlx, env->mlx_window, env->image.image, 0, 0);
