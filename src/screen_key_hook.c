@@ -4,7 +4,7 @@
 
 int	key_hook(int keycode, t_environment *env)
 {
-	if (keycode == 53)
+	if (keycode == KEY_ESC)
 		destroy_screen(env);
 //	else if (keycode == 123)
 //		env->x -= 100 / env->zoom / 1080 * 4;
