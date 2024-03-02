@@ -11,7 +11,7 @@ double	sphere_distance(const t_vector3 pos, const t_vector3 ray, const t_sphere 
 
 	ps_vec = subtract(pos, sphere->position);
 	b = 2 * dot(ps_vec, ray);
-	c = magnitude(ps_vec) - radius * radius;
+	c = dot(ps_vec, ps_vec) - radius * radius;
 	discriminant = b * b - 4 * c;
 	if (discriminant >= 0)
 		return (1);
