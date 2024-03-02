@@ -44,5 +44,6 @@ t_vector3		subtract(const t_vector3 vec1, const t_vector3 vec2);
 t_vector3		scale(const t_vector3 vec, double a);
 
 t_vector3		rotate(const t_rotate_info *info, const t_vector3 vec);
+t_vector3		rotate2(const t_vector3 axis, double theta, const t_vector3 vec);
 
 #endif

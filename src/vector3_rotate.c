@@ -26,3 +26,17 @@ t_vector3	rotate(const t_rotate_info *info, const t_vector3 vec)
 	tmp4 = add(tmp1, add(tmp2, tmp3));
 	return (normalize(tmp4));
 }
+
+t_vector3	rotate2(const t_vector3 axis, double theta, const t_vector3 vec)
+{
+	const double	sin_term = sin(theta);
+	const double	cos_term = cos(theta);
+	t_vector3		tmp1;
+	t_vector3		tmp2;
+	t_vector3		tmp3;
+
+	tmp1 = scale(axis, (1 - cos_term) * dot(axis, vec));
+	tmp2 = scale(vec, cos_term);
+	tmp3 = scale(cross(axis, vec), sin_term);
+	return (add(tmp1, add(tmp2, tmp3)));
+}
