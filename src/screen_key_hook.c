@@ -27,10 +27,8 @@ static void	move_camera(int keycode, t_environment *env)
 		panic("failed to move camera: unexpected key");
 }
 
-#include <stdio.h>
 static void	rotate_camera(int keycode, t_environment *env)
 {
-printf("key: %d\n", keycode);
 	const t_vector3	dir = get_camera(env)->orientation;
 
 	if (keycode == KEY_UP)
