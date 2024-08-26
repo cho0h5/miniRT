@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "equation.h"
+#include "equation.h"
 
-double closest_point_on_skew_lines(const t_vector3 a1, const t_vector3 b1,
-    const t_vector3 a2, const t_vector3 b2)
+double	closest_point_on_skew_lines(const t_vector3 a1, const t_vector3 b1,
+		const t_vector3 a2, const t_vector3 b2)
 {
-    const t_vector3 a2a1 = subtract(a1, a2);
-    const double    b1square = dot(b1, b1);
-    const double    b2square = dot(b2, b2);
-    const double    b1b2 = dot(b1, b2);
+	const t_vector3	a2a1 = subtract(a1, a2);
+	const double	b1square = dot(b1, b1);
+	const double	b2square = dot(b2, b2);
+	const double	b1b2 = dot(b1, b2);
 
-    return (dot(a2a1, b2) * b1b2 - dot(a2a1, b1) * b2square)
-        / (b1square * b2square - b1b2 * b1b2);
+	return ((dot(a2a1, b2) * b1b2 - dot(a2a1, b1) * b2square)
+		/ (b1square * b2square - b1b2 * b1b2));
 }
