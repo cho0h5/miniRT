@@ -15,7 +15,7 @@
 
 # include "vector3.h"
 
-double closest_point_on_skew_lines(const t_vector3 a1, const t_vector3 b1,
-    const t_vector3 a2, const t_vector3 b2);
+double	closest_point_on_skew_lines(const t_vector3 a1, const t_vector3 b1,
+			const t_vector3 a2, const t_vector3 b2);
 
 #endif
