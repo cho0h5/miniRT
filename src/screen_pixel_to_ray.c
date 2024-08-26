@@ -25,9 +25,10 @@ static t_vector3	get_normalized_ray(double fov, int i, int j)
 	return (ray);
 }
 
-t_vector3	pixel_to_ray(const t_camera *camera, const t_rotate_info *info, int i, int j)
+t_vector3	pixel_to_ray(const t_camera *camera, const t_rotate_info *info,
+				int i, int j)
 {
-	t_vector3 normalized_ray;
+	t_vector3	normalized_ray;
 
 	normalized_ray = get_normalized_ray(camera->fov, i, j);
 	return (rotate(info, normalized_ray));
