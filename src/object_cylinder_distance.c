@@ -28,6 +28,6 @@ double	cylinder_distance(const t_vector3 pos, const t_vector3 ray,
 
 	if (fabs(distance) <= cylinder->diameter / 2
 		&& fabs(s) <= cylinder->height / 2)
-		return (distance);
+		return (t);
 	return (DOUBLE_MAX);
 }
