@@ -21,10 +21,13 @@ double	cylinder_distance(const t_vector3 pos, const t_vector3 ray,
 	const t_vector3	normal_vec = normalize(cross(ray, cylinder->axis));
 	const double	distance = dot(subtract(pos, cylinder->position),
 			normal_vec);
-	const double t = closest_point_on_skew_lines(pos, ray, cylinder->position, cylinder->axis);
-	const double s = closest_point_on_skew_lines(cylinder->position, cylinder->axis, pos, ray);
+	const double	t = closest_point_on_skew_lines(pos, ray,
+			cylinder->position, cylinder->axis);
+	const double	s = closest_point_on_skew_lines(cylinder->position,
+			cylinder->axis, pos, ray);
 
-	if (fabs(distance) <= cylinder->diameter / 2 && fabs(s) <= cylinder->height / 2)
+	if (fabs(distance) <= cylinder->diameter / 2
+		&& fabs(s) <= cylinder->height / 2)
 		return (distance);
 	return (DOUBLE_MAX);
 }
