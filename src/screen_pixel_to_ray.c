@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:45 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 20:55:55 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/26 21:05:20 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ static double	camera_latitude(const t_vector3 camera_orientation)
 
 static double	camera_longitude(const t_vector3 camera_orientation)
 {
-	(void)camera_orientation;
-
-	return 0;
+	return (atan2(camera_orientation.y, camera_orientation.x) - M_PI / 2);
 }
 
 t_vector3	pixel_to_ray(const t_camera *camera, int i, int j)
