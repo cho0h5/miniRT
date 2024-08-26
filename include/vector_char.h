@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VECTOR_H
-# define VECTOR_H
+#ifndef VECTOR_CHAR_H
+# define VECTOR_CHAR_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 16

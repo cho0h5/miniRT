@@ -13,8 +13,8 @@
 #ifndef ENVIRONMENT_H
 # define ENVIRONMENT_H
 
-#include "libft.h"
-#include "object.h"
+# include "libft.h"
+# include "object.h"
 
 typedef struct s_mlx_image
 {
