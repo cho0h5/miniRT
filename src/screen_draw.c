@@ -30,10 +30,14 @@ void	draw(t_environment *env)
 	const t_rotate_info	rotate_info = init_rotate_info(env->cameras->content);
 	t_vector3			ray;
 	t_object_category	*object;
+	int					j;
+	int					i;
 
-	for (int j = 0; j < WIDTH; j++)
+	j = 0;
+	while (j < WIDTH)
 	{
-		for (int i = 0; i < WIDTH; i++)
+		i = 0;
+		while (i < WIDTH)
 		{
 			ray = pixel_to_ray(env->cameras->content, &rotate_info, i, j);
 			object = get_closest_object(get_camera(env)->position, ray,
@@ -42,7 +46,9 @@ void	draw(t_environment *env)
 				put_mlx_pixel(&env->image, i, j, 0);
 			else
 				put_mlx_pixel(&env->image, i, j, get_object_color(object));
+			i += 1;
 		}
+		j += 1;
 	}
 	mlx_put_image_to_window(env->mlx, env->mlx_window, env->image.image, 0, 0);
 }

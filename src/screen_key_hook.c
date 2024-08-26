@@ -44,13 +44,17 @@ static void	rotate_camera(int keycode, t_environment *env)
 	const t_vector3	dir = get_camera(env)->orientation;
 
 	if (keycode == KEY_UP)
-		get_camera(env)->orientation = rotate2(normalize(cross(dir, vector3(0, 0, 1))), 10.0 / 180 * M_PI, dir);
+		get_camera(env)->orientation = rotate2(normalize(
+				cross(dir, vector3(0, 0, 1))), 10.0 / 180 * M_PI, dir);
 	else if (keycode == KEY_DOWN)
-		get_camera(env)->orientation = rotate2(normalize(cross(dir, vector3(0, 0, 1))), -10.0 / 180 * M_PI, dir);
+		get_camera(env)->orientation = rotate2(normalize(
+				cross(dir, vector3(0, 0, 1))), -10.0 / 180 * M_PI, dir);
 	else if (keycode == KEY_LEFT)
-		get_camera(env)->orientation = rotate2(vector3(0, 0, 1), 10.0 / 180 * M_PI, dir);
+		get_camera(env)->orientation = rotate2(vector3(0, 0, 1),
+						10.0 / 180 * M_PI, dir);
 	else if (keycode == KEY_RIGHT)
-		get_camera(env)->orientation = rotate2(vector3(0, 0, 1), -10.0 / 180 * M_PI, dir);
+		get_camera(env)->orientation = rotate2(vector3(0, 0, 1),
+						-10.0 / 180 * M_PI, dir);
 }
 
 int	key_hook(int keycode, t_environment *env)
