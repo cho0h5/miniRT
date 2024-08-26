@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:45 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:46 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/26 20:55:55 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,30 @@ static t_vector3	get_normalized_ray(double fov, int i, int j)
 	ray.x = (i - (double)WIDTH / 2) * dx;
 	ray.y = 1;
 	ray.z = ((double)WIDTH / 2 - j) * dx;
-	return (ray);
+	return (normalize(ray));
 }
 
-t_vector3	pixel_to_ray(const t_camera *camera, const t_rotate_info *info,
-				int i, int j)
+static double	camera_latitude(const t_vector3 camera_orientation)
 {
-	t_vector3	normalized_ray;
+	const double	x = sqrt(camera_orientation.x * camera_orientation.x
+		+ camera_orientation.y * camera_orientation.y);
+	return (atan2(camera_orientation.z, x));
+}
 
-	normalized_ray = get_normalized_ray(camera->fov, i, j);
-	return (rotate(info, normalized_ray));
+static double	camera_longitude(const t_vector3 camera_orientation)
+{
+	(void)camera_orientation;
+
+	return 0;
+}
+
+t_vector3	pixel_to_ray(const t_camera *camera, int i, int j)
+{
+	const t_vector3	normalized_ray = get_normalized_ray(camera->fov, i, j);
+	const double	theta1 = camera_latitude(camera->orientation);
+	const double	theta2 = camera_longitude(camera->orientation);
+	const t_vector3 tmp1 = rotate2(vector3(1, 0, 0), theta1, normalized_ray);
+	const t_vector3 tmp2 = rotate2(vector3(0, 0, 1), theta2, tmp1);
+
+	return (tmp2);
 }

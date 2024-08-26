@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:44 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:45 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/26 20:55:42 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	put_mlx_pixel(t_mlx_image *data, int x, int y, int color)
 
 void	draw(t_environment *env)
 {
-	const t_rotate_info	rotate_info = init_rotate_info(env->cameras->content);
 	t_vector3			ray;
 	t_object_category	*object;
 	int					j;
@@ -39,7 +38,7 @@ void	draw(t_environment *env)
 		i = 0;
 		while (i < WIDTH)
 		{
-			ray = pixel_to_ray(env->cameras->content, &rotate_info, i, j);
+			ray = pixel_to_ray(env->cameras->content, i, j);
 			object = get_closest_object(get_camera(env)->position, ray,
 					env->objects);
 			if (object == NULL)

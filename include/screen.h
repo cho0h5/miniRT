@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:53:44 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:53:45 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/26 20:47:26 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
 
-t_vector3	pixel_to_ray(const t_camera *camera, const t_rotate_info *info,
-				int i, int j);
+t_vector3	pixel_to_ray(const t_camera *camera, int i, int j);
 void		draw(t_environment *env);
 int			destroy_screen(t_environment *env);
 int			key_hook(int keycode, t_environment *env);
