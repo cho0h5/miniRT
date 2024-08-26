@@ -14,7 +14,8 @@
 #include "object.h"
 #include "vector3.h"
 
-double	sphere_distance(const t_vector3 pos, const t_vector3 ray, const t_sphere *sphere)
+double	sphere_distance(const t_vector3 pos, const t_vector3 ray,
+				const t_sphere *sphere)
 {
 	const t_vector3	sp_vec = subtract(pos, sphere->position);
 	const double	radius = sphere->diameter / 2;

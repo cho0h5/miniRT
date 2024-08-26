@@ -20,7 +20,8 @@ static void	put_mlx_pixel(t_mlx_image *data, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->address + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	dst = data->address
+		+ (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
 }
 
@@ -30,10 +31,13 @@ void	draw(t_environment *env)
 	t_vector3			ray;
 	t_object_category	*object;
 
-	for (int j = 0; j < WIDTH; j++) {
-		for (int i = 0; i < WIDTH; i++) {
+	for (int j = 0; j < WIDTH; j++)
+	{
+		for (int i = 0; i < WIDTH; i++)
+		{
 			ray = pixel_to_ray(env->cameras->content, &rotate_info, i, j);
-			object = get_closest_object(get_camera(env)->position, ray, env->objects);
+			object = get_closest_object(get_camera(env)->position, ray,
+					env->objects);
 			if (object == NULL)
 				put_mlx_pixel(&env->image, i, j, 0);
 			else

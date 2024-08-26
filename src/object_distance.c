@@ -14,7 +14,8 @@
 #include "panic.h"
 #include "vector3.h"
 
-double	object_distance(const t_vector3 pos, const t_vector3 ray, const t_object_category *object_category)
+double	object_distance(const t_vector3 pos, const t_vector3 ray,
+				const t_object_category *object_category)
 {
 	const void	*object = (void *)object_category + sizeof(t_object_category);
 

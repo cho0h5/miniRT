@@ -14,7 +14,8 @@
 #include "parse.h"
 #include "panic.h"
 
-void	parse_object(t_list **objects, const char *line, size_t *i, t_identifier id)
+void	parse_object(t_list **objects, const char *line, size_t *i,
+				t_identifier id)
 {
 	if (id == ID_PLANE)
 		parse_plane(objects, line, i);

@@ -42,7 +42,8 @@ static int	parse_decimal_point(const char *line, size_t *i)
 	return (0);
 }
 
-static void	parse_decimal_integer_part(double *decimal, const char *line, size_t *i)
+static void	parse_decimal_integer_part(double *decimal, const char *line,
+				size_t *i)
 {
 	while (ft_isdigit(line[*i]))
 	{
@@ -53,7 +54,8 @@ static void	parse_decimal_integer_part(double *decimal, const char *line, size_t
 	}
 }
 
-static void	parse_decimal_fractional_part(double *decimal, const char *line, size_t *i)
+static void	parse_decimal_fractional_part(double *decimal, const char *line,
+				size_t *i)
 {
 	double	scale;
 
