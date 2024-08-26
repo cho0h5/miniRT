@@ -26,19 +26,19 @@ static void	move_camera(int keycode, t_environment *env)
 
 	camera = get_camera(env);
 	if (keycode == KEY_Q)
-		camera->position.z -= 10;
+		camera->position.z -= 20;
 	else if (keycode == KEY_E)
-		camera->position.z += 10;
+		camera->position.z += 20;
 	else if (keycode == KEY_W)
-		camera->position = add(pos, scale(dir, 10));
+		camera->position = add(pos, scale(dir, 20));
 	else if (keycode == KEY_S)
-		camera->position = add(pos, scale(dir, -10));
+		camera->position = add(pos, scale(dir, -20));
 	else if (keycode == KEY_A)
 		camera->position = add(pos,
-				scale(normalize(cross(vector3(0, 0, 1), dir)), 10));
+				scale(normalize(cross(vector3(0, 0, 1), dir)), 20));
 	else if (keycode == KEY_D)
 		camera->position = add(pos,
-				scale(normalize(cross(vector3(0, 0, 1), dir)), -10));
+				scale(normalize(cross(vector3(0, 0, 1), dir)), -20));
 	else
 		panic("failed to move camera: unexpected key");
 }
@@ -46,21 +46,22 @@ static void	move_camera(int keycode, t_environment *env)
 static void	rotate_camera(int keycode, t_environment *env)
 {
 	const t_vector3	dir = get_camera(env)->orientation;
+	const double	rotation_radian = 30.0 / 180 * M_PI;
 	t_camera		*camera;
 
 	camera = get_camera(env);
 	if (keycode == KEY_UP)
 		camera->orientation = rotate2(normalize(
-					cross(dir, vector3(0, 0, 1))), 10.0 / 180 * M_PI, dir);
+					cross(dir, vector3(0, 0, 1))), rotation_radian, dir);
 	else if (keycode == KEY_DOWN)
 		camera->orientation = rotate2(normalize(
-					cross(dir, vector3(0, 0, 1))), -10.0 / 180 * M_PI, dir);
+					cross(dir, vector3(0, 0, 1))), -rotation_radian, dir);
 	else if (keycode == KEY_LEFT)
 		camera->orientation = rotate2(vector3(0, 0, 1),
-				10.0 / 180 * M_PI, dir);
+				rotation_radian, dir);
 	else if (keycode == KEY_RIGHT)
 		camera->orientation = rotate2(vector3(0, 0, 1),
-				-10.0 / 180 * M_PI, dir);
+				-rotation_radian, dir);
 }
 
 int	key_hook(int keycode, t_environment *env)
