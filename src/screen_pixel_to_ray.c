@@ -28,7 +28,8 @@ static t_vector3	get_normalized_ray(double fov, int i, int j)
 static double	camera_latitude(const t_vector3 camera_orientation)
 {
 	const double	x = sqrt(camera_orientation.x * camera_orientation.x
-		+ camera_orientation.y * camera_orientation.y);
+			+ camera_orientation.y * camera_orientation.y);
+
 	return (atan2(camera_orientation.z, x));
 }
 
@@ -42,8 +43,8 @@ t_vector3	pixel_to_ray(const t_camera *camera, int i, int j)
 	const t_vector3	normalized_ray = get_normalized_ray(camera->fov, i, j);
 	const double	theta1 = camera_latitude(camera->orientation);
 	const double	theta2 = camera_longitude(camera->orientation);
-	const t_vector3 tmp1 = rotate2(vector3(1, 0, 0), theta1, normalized_ray);
-	const t_vector3 tmp2 = rotate2(vector3(0, 0, 1), theta2, tmp1);
+	const t_vector3	tmp1 = rotate2(vector3(1, 0, 0), theta1, normalized_ray);
+	const t_vector3	tmp2 = rotate2(vector3(0, 0, 1), theta2, tmp1);
 
 	return (tmp2);
 }
