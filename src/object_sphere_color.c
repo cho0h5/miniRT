@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:17 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 16:34:58 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 19:07:42 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ unsigned int	get_sphere_color(const t_sphere *sphere,
 {
 	const t_vector3	ambient = get_sphere_ambient(sphere, get_ambient(env));
 	const t_vector3	diffuse = get_sphere_diffuse(sphere, env, ray, distance);
-	(void)ambient;
 
 	return (to_color(add(ambient, diffuse)));
 }
