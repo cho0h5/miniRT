@@ -12,10 +12,12 @@
 
 #include "object.h"
 
-unsigned int	get_cylinder_color(const t_cylinder *cylinder)
+unsigned int	get_cylinder_color(const t_cylinder *cylinder,
+						const t_light *light)
 {
 	unsigned int	color;
 
+	(void)light;
 	color = 0;
 	color += (unsigned char)cylinder->color.x;
 	color = color << 8;

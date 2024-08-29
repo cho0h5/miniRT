@@ -12,10 +12,12 @@
 
 #include "object.h"
 
-unsigned int	get_sphere_color(const t_sphere *sphere)
+unsigned int	get_sphere_color(const t_sphere *sphere,
+						const t_light *light)
 {
 	unsigned int	color;
 
+	(void)light;
 	color = 0;
 	color += (unsigned char)sphere->color.x;
 	color = color << 8;

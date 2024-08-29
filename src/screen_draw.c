@@ -45,7 +45,8 @@ void	draw(t_environment *env)
 			if (object == NULL)
 				put_mlx_pixel(&env->image, i, j, 0);
 			else
-				put_mlx_pixel(&env->image, i, j, get_object_color(object));
+				put_mlx_pixel(&env->image, i, j,
+					get_object_color(object, get_light(env)));
 			i += 1;
 		}
 		j += 1;

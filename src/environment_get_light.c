@@ -12,7 +12,7 @@
 
 #include "environment.h"
 
-t_camera	*get_light(const t_environment *env)
+t_light	*get_light(const t_environment *env)
 {
 	return (env->lights->content);
 }

@@ -12,10 +12,12 @@
 
 #include "object.h"
 
-unsigned int	get_plane_color(const t_plane *plane)
+unsigned int	get_plane_color(const t_plane *plane,
+						const t_light *light)
 {
 	unsigned int	color;
 
+	(void)light;
 	color = 0;
 	color += (unsigned char)plane->color.x;
 	color = color << 8;
