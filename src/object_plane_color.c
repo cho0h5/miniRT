@@ -6,10 +6,11 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 13:42:55 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:40:39 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "environment.h"
 #include "object.h"
 #include "color.h"
@@ -22,13 +23,25 @@ static t_vector3	get_plane_ambient(const t_plane *plane,
 			scale(ambient->color, ambient->ratio / 255)));
 }
 
+static t_vector3	get_plane_diffuse(const t_plane *plane,
+						const t_environment *env, const double distance)
+{
+	const t_vector3	normal = normalize(plane->normal);
+	const t_vector3	hit_point = add(get_camera(env)->position,
+			scale(get_camera(env)->orientation, distance));
+	const t_vector3 to_light = normalize(
+			subtract(get_light(env)->position, hit_point));
+	const double	diffuse_strength = fmax(0, dot(normal, to_light));
+	const t_vector3 diffuse = scale(get_light(env)->color, diffuse_strength);
+
+	return (diffuse);
+}
+
 unsigned int	get_plane_color(const t_plane *plane,
 						const t_environment *env, const double distance)
 {
 	const t_vector3	ambient = get_plane_ambient(plane, get_ambient(env));
-	const t_vector3	hit_point = add(get_camera(env)->position,
-			scale(get_camera(env)->orientation, distance));
+	const t_vector3	diffuse = get_plane_diffuse(plane, env, distance);
 
-	(void)hit_point;
-	return (to_color(ambient));
+	return (to_color(add(ambient, diffuse)));
 }
