@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 18:50:24 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 19:03:41 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ unsigned int	get_plane_color(const t_plane *plane,
 	const t_vector3	diffuse = get_plane_diffuse(plane, env, ray, distance);
 
 	if (is_shadow(env, ray, distance))
-		return (to_color(diffuse));
+		return (to_color(ambient));
 	else
 		return (to_color(add(ambient, diffuse)));
 }
