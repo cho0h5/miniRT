@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:44 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 20:55:42 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 12:34:47 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "object.h"
 #include "screen.h"
 #include "vector3.h"
+#include "color.h"
 
 static void	put_mlx_pixel(t_mlx_image *data, int x, int y, int color)
 {
@@ -46,7 +47,7 @@ void	draw(t_environment *env)
 				put_mlx_pixel(&env->image, i, j, 0);
 			else
 				put_mlx_pixel(&env->image, i, j,
-					get_object_color(object, get_light(env)));
+					get_object_color(object, env));
 			i += 1;
 		}
 		j += 1;

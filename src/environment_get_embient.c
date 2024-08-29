@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   object_sphere_color.c                              :+:      :+:    :+:   */
+/*   environment_get_embient.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 13:52:17 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 12:34:37 by younghoc         ###   ########.fr       */
+/*   Created: 2024/08/26 13:51:42 by younghoc          #+#    #+#             */
+/*   Updated: 2024/08/29 12:17:44 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "environment.h"
-#include "object.h"
-#include "color.h"
 
-unsigned int	get_sphere_color(const t_sphere *sphere,
-						const t_environment *env)
+t_embient	*get_embient(const t_environment *env)
 {
-	(void)env;
-	return (to_uint(sphere->color));
+	return (env->embients->content);
 }
