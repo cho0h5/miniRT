@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:47:55 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:54:16 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:22:09 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ t_vector3		scale(const t_vector3 vec, double a);
 t_vector3		rotate(const t_rotate_info *info, const t_vector3 vec);
 t_vector3		rotate2(const t_vector3 axis, double theta,
 					const t_vector3 vec);
+
+unsigned int	to_uint(const t_vector3 vec);
 
 #endif
