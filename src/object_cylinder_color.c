@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:54 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 20:19:20 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 20:30:43 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static t_vector3	get_cylinder_diffuse(const t_cylinder *cylinder,
 						const t_environment *env, const t_vector3 ray,
 						const double distance)
 {
-	const double	s = closest_point_on_skew_lines(get_camera(env)->position,
-			ray, cylinder->position, cylinder->axis);
+	const double	s = closest_point_on_skew_lines(cylinder->position,
+			cylinder->axis, get_camera(env)->position, ray);
 	const t_vector3	center = add(cylinder->position, scale(cylinder->axis, s));
 	const t_vector3	hit_point = add(get_camera(env)->position,
 			scale(ray, distance));
