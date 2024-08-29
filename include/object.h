@@ -77,7 +77,8 @@ void				cylinder_print(const t_cylinder *cylinder);
 t_rotate_info		init_rotate_info(const t_camera *camera);
 
 t_object_category	*get_closest_object(const t_vector3 pos,
-						const t_vector3 ray, t_list *objects);
+						const t_vector3 ray, t_list *objects,
+						double *closest_object);
 double				object_distance(const t_vector3 pos, const t_vector3 ray,
 						const t_object_category *object_category);
 double				plane_distance(const t_vector3 pos, const t_vector3 ray,

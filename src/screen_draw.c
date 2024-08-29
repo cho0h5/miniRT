@@ -31,6 +31,7 @@ void	draw(t_environment *env)
 	t_object_category	*object;
 	int					j;
 	int					i;
+	double				distance;
 
 	j = 0;
 	while (j < WIDTH)
@@ -40,7 +41,7 @@ void	draw(t_environment *env)
 		{
 			ray = pixel_to_ray(env->cameras->content, i, j);
 			object = get_closest_object(get_camera(env)->position, ray,
-					env->objects);
+					env->objects, &distance);
 			if (object == NULL)
 				put_mlx_pixel(&env->image, i, j, 0);
 			else
