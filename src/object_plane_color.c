@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 16:09:16 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:41:06 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,18 @@ unsigned int	get_plane_color(const t_plane *plane,
 {
 	const t_vector3	ambient = get_plane_ambient(plane, get_ambient(env));
 	const t_vector3	diffuse = get_plane_diffuse(plane, env, ray, distance);
+	const t_vector3	hit_point = add(get_camera(env)->position,
+			scale(ray, distance));
+	const double	threshold = magnitude(subtract(hit_point, get_light(env)->position));
+	double			distance2;
 
-	return (to_color(add(ambient, diffuse)));
+	get_closest_object(hit_point, normalize(subtract(get_light(env)->position, hit_point)), env->objects, &distance2);
+	if (distance2 < threshold)
+	{
+		return (to_color(diffuse));
+	}
+	else
+	{
+		return (to_color(add(ambient, diffuse)));
+	}
 }
