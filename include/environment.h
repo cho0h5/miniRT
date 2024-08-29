@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:53:38 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 12:18:07 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:04:01 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ void		init_environment(t_environment *env);
 
 t_camera	*get_camera(const t_environment *env);
 t_light		*get_light(const t_environment *env);
-t_light		*get_embient(const t_environment *env);
+t_ambient	*get_ambient(const t_environment *env);
 
 #endif

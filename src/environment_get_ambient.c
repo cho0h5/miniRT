@@ -6,13 +6,13 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:42 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 12:17:44 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:04:14 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "environment.h"
 
-t_embient	*get_embient(const t_environment *env)
+t_ambient	*get_ambient(const t_environment *env)
 {
-	return (env->embients->content);
+	return (env->ambients->content);
 }
