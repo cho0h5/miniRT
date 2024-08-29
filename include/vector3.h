@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:47:55 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 11:22:09 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 12:14:19 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_vector3		normalize(const t_vector3 vec);
 double			angle(const t_vector3 vec1, const t_vector3 vec2);
 t_vector3		cross(const t_vector3 vec1, const t_vector3 vec2);
 double			dot(const t_vector3 vec1, const t_vector3 vec2);
+t_vector3		multiply(const t_vector3 vec1, const t_vector3 vec2);
 
 t_vector3		add(const t_vector3 vec1, const t_vector3 vec2);
 t_vector3		subtract(const t_vector3 vec1, const t_vector3 vec2);
