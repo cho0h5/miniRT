@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 15:54:26 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:57:04 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ static t_vector3	get_plane_ambient(const t_plane *plane,
 }
 
 static t_vector3	get_plane_diffuse(const t_plane *plane,
-						const t_environment *env, const double distance)
+						const t_environment *env, const t_vector3 ray,
+						const double distance)
 {
 	const t_vector3	normal = normalize(plane->normal);
 	const t_vector3	hit_point = add(get_camera(env)->position,
-			scale(get_camera(env)->orientation, distance));
+			scale(ray, distance));
 	const t_vector3	to_light = normalize(
 			subtract(get_light(env)->position, hit_point));
 	const double	diffuse_strength = fmax(0, dot(normal, to_light));
@@ -42,7 +43,7 @@ unsigned int	get_plane_color(const t_plane *plane,
 						const double distance)
 {
 	const t_vector3	ambient = get_plane_ambient(plane, get_ambient(env));
-	const t_vector3	diffuse = get_plane_diffuse(plane, env, distance);
+	const t_vector3	diffuse = get_plane_diffuse(plane, env, ray, distance);
 
 	return (to_color(add(ambient, diffuse)));
 }

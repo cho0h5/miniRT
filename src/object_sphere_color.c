@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:17 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 15:54:32 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:56:17 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ static t_vector3	get_sphere_ambient(const t_sphere *sphere,
 }
 
 static t_vector3	get_sphere_diffuse(const t_sphere *sphere,
-		const t_environment *env, const double distance)
+						const t_environment *env, const t_vector3 ray,
+						const double distance)
 {
 	const t_vector3	hit_point = add(get_camera(env)->position,
-			scale(get_camera(env)->orientation, distance));
+			scale(ray, distance));
 	const t_vector3	normal = normalize(subtract(hit_point, sphere->position));
 	const t_vector3	to_light = normalize(
 			subtract(get_light(env)->position, hit_point));
@@ -42,7 +43,7 @@ unsigned int	get_sphere_color(const t_sphere *sphere,
 						const double distance)
 {
 	const t_vector3	ambient = get_sphere_ambient(sphere, get_ambient(env));
-	const t_vector3	diffuse = get_sphere_diffuse(sphere, env, distance);
+	const t_vector3	diffuse = get_sphere_diffuse(sphere, env, ray, distance);
 	(void)ambient;
 
 	// return (to_color(add(ambient, diffuse)));
