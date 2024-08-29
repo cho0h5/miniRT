@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 15:42:17 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:54:26 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ static t_vector3	get_plane_diffuse(const t_plane *plane,
 }
 
 unsigned int	get_plane_color(const t_plane *plane,
-						const t_environment *env, const double distance)
+						const t_environment *env, const t_vector3 ray,
+						const double distance)
 {
 	const t_vector3	ambient = get_plane_ambient(plane, get_ambient(env));
 	const t_vector3	diffuse = get_plane_diffuse(plane, env, distance);
