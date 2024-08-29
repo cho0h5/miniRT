@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:10 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:21:31 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 unsigned int	get_plane_color(const t_plane *plane,
 						const t_light *light)
 {
-	unsigned int	color;
-
 	(void)light;
-	color = 0;
-	color += (unsigned char)plane->color.x;
-	color = color << 8;
-	color += (unsigned char)plane->color.y;
-	color = color << 8;
-	color += (unsigned char)plane->color.z;
-	return (color);
+	return (to_uint(plane->color));
 }

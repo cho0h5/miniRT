@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:17 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:18 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:25:19 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 unsigned int	get_sphere_color(const t_sphere *sphere,
 						const t_light *light)
 {
-	unsigned int	color;
-
 	(void)light;
-	color = 0;
-	color += (unsigned char)sphere->color.x;
-	color = color << 8;
-	color += (unsigned char)sphere->color.y;
-	color = color << 8;
-	color += (unsigned char)sphere->color.z;
-	return (color);
+	return (to_uint(sphere->color));
 }
