@@ -21,7 +21,7 @@ SRCS	=	$(SRC_DIR)main.c						\
 			$(SRC_DIR)vector3_subtract.c			\
 			$(SRC_DIR)vector3_scale.c				\
 			$(SRC_DIR)vector3_rotate.c				\
-			$(SRC_DIR)vector3_to_uint.c				\
+			$(SRC_DIR)vector3_to_color.c			\
 			$(SRC_DIR)vector3_multiply.c			\
 			$(SRC_DIR)vector_char.c					\
 			$(SRC_DIR)vector_char_push_str.c		\
