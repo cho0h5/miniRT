@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:44 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 12:34:47 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/08/29 12:53:43 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	draw(t_environment *env)
 				put_mlx_pixel(&env->image, i, j, 0);
 			else
 				put_mlx_pixel(&env->image, i, j,
-					get_object_color(object, env));
+					get_object_color(object, env, distance));
 			i += 1;
 		}
 		j += 1;
