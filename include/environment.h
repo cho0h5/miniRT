@@ -39,5 +39,6 @@ typedef struct s_environment
 void		init_environment(t_environment *env);
 
 t_camera	*get_camera(const t_environment *env);
+t_light		*get_light(const t_environment *env);
 
 #endif
