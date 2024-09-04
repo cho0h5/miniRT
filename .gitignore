@@ -5,3 +5,5 @@ miniRT
 .DS_Store
 minilibx
 *.swp
+libmlx
+make_on_my_mac.sh
