@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:54 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 18:50:43 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:08:46 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ static t_vector3	get_cylinder_ambient(const t_cylinder *cylinder,
 			scale(ambient->color, ambient->ratio / 255)));
 }
 
+static double	calculate_hypotenuse_length(const t_vector3 ray,
+				const t_cylinder *cylinder, const double distance_skew)
+{
+	const double	hypotenuse_on_plane = sqrt((cylinder->diameter / 2)
+			* (cylinder->diameter / 2) - distance_skew * distance_skew);
+	const double	theta = fabs(acos(angle(cylinder->axis, ray)));
+
+	return (hypotenuse_on_plane / sin(theta));
+}
+
 static double	calculate_height_length(const t_vector3 ray,
 				const t_cylinder *cylinder, const double distance_skew)
 {
@@ -33,6 +43,23 @@ static double	calculate_height_length(const t_vector3 ray,
 	return (hypotenuse_on_plane / tan(theta));
 }
 
+static double	get_h(const t_cylinder *cylinder, const t_environment *env,
+		const t_vector3 ray, const double distance_skew)
+{
+	const double	t = closest_point_on_skew_lines(get_camera(env)->position,
+			ray, cylinder->position, cylinder->axis);
+	const double	s = closest_point_on_skew_lines(cylinder->position,
+			cylinder->axis, get_camera(env)->position, ray);
+	const double hypotenuse = calculate_hypotenuse_length(ray, cylinder,
+			distance_skew);
+	const double height = calculate_height_length(ray, cylinder, distance_skew);
+
+	if (t - hypotenuse >= 0 && fabs(s - height) <= cylinder->height / 2)
+		return (s - height);
+	else
+		return (s + height);
+}
+
 static t_vector3	get_normal_vector(const t_cylinder *cylinder,
 						const t_environment *env, const t_vector3 ray,
 						const t_vector3 hit_point)
@@ -40,10 +67,8 @@ static t_vector3	get_normal_vector(const t_cylinder *cylinder,
 	const t_vector3	normal_vec = normalize(cross(ray, cylinder->axis));
 	const double	distance_skew = dot(subtract(get_camera(env)->position,
 				cylinder->position), normal_vec);
-	const double	s = closest_point_on_skew_lines(cylinder->position,
-			cylinder->axis, get_camera(env)->position, ray);
 	const t_vector3	center = add(cylinder->position, scale(cylinder->axis,
-				s - calculate_height_length(ray, cylinder, distance_skew)));
+				get_h(cylinder, env, ray, distance_skew)));
 	const t_vector3	cylinder_normal = normalize(subtract(hit_point, center));
 
 	if (dot(cylinder_normal, ray) < 0)
