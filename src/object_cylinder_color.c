@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:54 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 13:27:24 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:28:27 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ static t_vector3	get_cylinder_diffuse(const t_cylinder *cylinder,
 						const double distance)
 {
 	const t_vector3	normal_vec = normalize(cross(ray, cylinder->axis));
-	const double	distance_skew = dot(subtract(get_camera(env)->position, cylinder->position),
-			normal_vec);
+	const double	distance_skew = dot(subtract(get_camera(env)->position,
+				cylinder->position), normal_vec);
 	const double	s = closest_point_on_skew_lines(cylinder->position,
 			cylinder->axis, get_camera(env)->position, ray);
-	const t_vector3	center = add(cylinder->position, scale(cylinder->axis, s - calculate_height_length(ray, cylinder, distance_skew)));
+	const t_vector3	center = add(cylinder->position, scale(cylinder->axis,
+				s - calculate_height_length(ray, cylinder, distance_skew)));
 	const t_vector3	hit_point = add(get_camera(env)->position,
 			scale(ray, distance));
 	const t_vector3	normal = normalize(subtract(hit_point, center));
