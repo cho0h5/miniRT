@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:53 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 15:54:38 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:16:55 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ unsigned int	get_object_color(const t_object_category *object_category,
 		return (get_sphere_color(object, env, ray, distance));
 	if (*object_category == OBJ_CYLINDER)
 		return (get_cylinder_color(object, env, ray, distance));
+	if (*object_category == OBJ_CYLINDER_BASE)
+		return (get_cylinder_base_color(object, env, ray, distance));
 	panic("failed to get object color: unexpected object");
 	return (-1);
 }

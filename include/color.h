@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:45:26 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 19:05:35 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:18:01 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ unsigned int		get_sphere_color(const t_sphere *sphere,
 						const t_environment *env, const t_vector3 ray,
 						const double distance);
 unsigned int		get_cylinder_color(const t_cylinder *cylinder,
+						const t_environment *env, const t_vector3 ray,
+						const double distance);
+unsigned int		get_cylinder_base_color(
+						const t_cylinder_base *cylinder_base,
 						const t_environment *env, const t_vector3 ray,
 						const double distance);
 
