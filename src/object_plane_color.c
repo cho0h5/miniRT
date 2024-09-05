@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 19:03:41 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:26:25 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,20 @@ static t_vector3	get_plane_ambient(const t_plane *plane,
 			scale(ambient->color, ambient->ratio / 255)));
 }
 
+static t_vector3	get_normal_vector(const t_vector3 plane_normal,
+		const t_vector3 ray)
+{
+	if (dot(plane_normal, ray) < 0)
+		return (plane_normal);
+	else
+		return (scale(plane_normal, -1));
+}
+
 static t_vector3	get_plane_diffuse(const t_plane *plane,
 						const t_environment *env, const t_vector3 ray,
 						const double distance)
 {
-	const t_vector3	normal = normalize(plane->normal);
+	const t_vector3	normal = get_normal_vector(plane->normal, ray);
 	const t_vector3	hit_point = add(get_camera(env)->position,
 			scale(ray, distance));
 	const t_vector3	to_light = normalize(
