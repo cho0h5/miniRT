@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:09 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 18:26:25 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:49:45 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,9 @@ static t_vector3	get_plane_diffuse(const t_plane *plane,
 			subtract(get_light(env)->position, hit_point));
 	const double	diffuse_strength = fmax(0, dot(normal, to_light))
 		* get_light(env)->brightness;
-	const t_vector3	diffuse = multiply(plane->color,
-			scale(get_light(env)->color, diffuse_strength / 255));
 
-	return (diffuse);
+	return (multiply(plane->color,
+			scale(get_light(env)->color, diffuse_strength / 255)));
 }
 
 unsigned int	get_plane_color(const t_plane *plane,
