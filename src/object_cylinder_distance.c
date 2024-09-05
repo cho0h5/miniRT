@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:57 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 13:55:24 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:13:23 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ double	cylinder_distance(const t_vector3 pos, const t_vector3 ray,
 	if (t + hypotenuse >= 0
 		&& fabs(s + calculate_height_length(ray, cylinder, distance_skew))
 		<= cylinder->height / 2)
-		return (t - hypotenuse);
+		return (t + hypotenuse);
 	return (DOUBLE_MAX);
 }
