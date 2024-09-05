@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:57 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 13:47:50 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:55:24 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,16 @@ double	cylinder_distance(const t_vector3 pos, const t_vector3 ray,
 			cylinder->axis, pos, ray);
 	double			hypotenuse;
 
-	if (fabs(distance_skew) > cylinder->diameter / 2
-		|| fabs(s - calculate_height_length(ray, cylinder, distance_skew))
-		> cylinder->height / 2)
+	if (fabs(distance_skew) > cylinder->diameter / 2)
 		return (DOUBLE_MAX);
 	hypotenuse = calculate_hypotenuse_length(ray, cylinder, distance_skew);
-	if (t - hypotenuse >= 0)
+	if (t - hypotenuse >= 0
+		&& fabs(s - calculate_height_length(ray, cylinder, distance_skew))
+		<= cylinder->height / 2)
 		return (t - hypotenuse);
-	if (t + hypotenuse >= 0)
+	if (t + hypotenuse >= 0
+		&& fabs(s + calculate_height_length(ray, cylinder, distance_skew))
+		<= cylinder->height / 2)
 		return (t - hypotenuse);
 	return (DOUBLE_MAX);
 }
