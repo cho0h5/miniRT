@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:51:57 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 14:13:23 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:37:41 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "vector3.h"
 #include "equation.h"
 
-static double	calculate_hypotenuse_length(const t_vector3 ray,
+double	calculate_hypotenuse_length(const t_vector3 ray,
 				const t_cylinder *cylinder, const double distance_skew)
 {
 	const double	hypotenuse_on_plane = sqrt((cylinder->diameter / 2)
@@ -25,7 +25,7 @@ static double	calculate_hypotenuse_length(const t_vector3 ray,
 	return (hypotenuse_on_plane / sin(theta));
 }
 
-static double	calculate_height_length(const t_vector3 ray,
+double	calculate_height_length(const t_vector3 ray,
 				const t_cylinder *cylinder, const double distance_skew)
 {
 	const double	hypotenuse_on_plane = sqrt((cylinder->diameter / 2)

@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:45:32 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/29 12:29:28 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:40:01 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,10 @@ double				sphere_distance(const t_vector3 pos, const t_vector3 ray,
 						const t_sphere *sphere);
 double				cylinder_distance(const t_vector3 pos, const t_vector3 ray,
 						const t_cylinder *cylinder);
+
+double				calculate_hypotenuse_length(const t_vector3 ray,
+						const t_cylinder *cylinder, const double distance_skew);
+double				calculate_height_length(const t_vector3 ray,
+						const t_cylinder *cylinder, const double distance_skew);
 
 #endif
