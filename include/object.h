@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:45:32 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 19:40:01 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:48:25 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef enum e_object_category
 	OBJ_PLANE,
 	OBJ_SPHERE,
 	OBJ_CYLINDER,
+	OBJ_CYLINDER_BASE,
 }	t_object_category;
 
 typedef struct s_plane
@@ -66,6 +67,14 @@ typedef struct s_cylinder
 	t_vector3	color;
 }	t_cylinder;
 
+typedef struct s_cylinder_base
+{
+	t_vector3	position;
+	t_vector3	normal;
+	double		diameter;
+	t_vector3	color;
+}	t_cylinder_base;
+
 void				ambient_print(const t_ambient *ambient);
 void				camera_print(const t_camera *camera);
 void				light_print(const t_light *light);
@@ -87,6 +96,9 @@ double				sphere_distance(const t_vector3 pos, const t_vector3 ray,
 						const t_sphere *sphere);
 double				cylinder_distance(const t_vector3 pos, const t_vector3 ray,
 						const t_cylinder *cylinder);
+double				cylinder_base_distance(const t_vector3 pos,
+						const t_vector3 ray,
+						const t_cylinder_base *cylinder_base);
 
 double				calculate_hypotenuse_length(const t_vector3 ray,
 						const t_cylinder *cylinder, const double distance_skew);

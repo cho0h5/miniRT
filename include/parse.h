@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:53:43 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:53:44 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:47:40 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef enum e_identifier
 	ID_SPHERE,
 	ID_PLANE,
 	ID_CYLINDER,
+	ID_CYLINDER_BASE,
 	ID_EMPTY_LINE,
 	ID_UNKNOWN
 }	t_identifier;
