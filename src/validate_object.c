@@ -1,19 +1,19 @@
 #include "validate.h"
 #include "panic.h"
 
-static void validate_plane(t_plane *plane)
+static void validate_plane(const t_plane *plane)
 {
 	validate_orientation(&plane->normal);
 	validate_color(plane->color);
 }
 
-static void validate_sphere(t_sphere *sphere)
+static void validate_sphere(const t_sphere *sphere)
 {
 	validate_positive(sphere->diameter);
 	validate_color(sphere->color);
 }
 
-static void validate_cylinder(t_cylinder *cylinder)
+static void validate_cylinder(const t_cylinder *cylinder)
 {
 	validate_orientation(&cylinder->axis);
 	validate_positive(cylinder->diameter);
@@ -21,7 +21,7 @@ static void validate_cylinder(t_cylinder *cylinder)
 	validate_color(cylinder->color);
 }
 
-static void validate_cylinder_base(t_cylinder_base *cylinder_base)
+static void validate_cylinder_base(const t_cylinder_base *cylinder_base)
 {
 	validate_orientation(&cylinder_base->normal);
 	validate_positive(cylinder_base->diameter);

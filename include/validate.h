@@ -12,7 +12,7 @@ void	validate_object(void *content);
 
 void	validate_range(const double mininum, const double maximum, const double x);
 void	validate_positive(const double x);
-void	validate_orientation(t_vector3 *orientation);
+void	validate_orientation(const t_vector3 *orientation);
 void	validate_color(const t_vector3 color);
 
 #endif
