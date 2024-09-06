@@ -7,3 +7,4 @@ minilibx
 *.swp
 libmlx
 make_on_my_mac.sh
+make_on_fedora.sh

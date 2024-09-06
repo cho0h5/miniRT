@@ -76,7 +76,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C libft
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $^
+	$(CC) $(CFLAGS) -o $(NAME) $^ $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

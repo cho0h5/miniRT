@@ -36,6 +36,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*temp;
 
 	result = NULL;
+	result_tail = NULL;
 	while (lst)
 	{
 		temp = copy_node(lst->content, f, del);
