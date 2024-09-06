@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:53:43 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 19:47:40 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:36:44 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ void			parse_comma(const char *line, size_t *i);
 void			parse_newline(const char *line, size_t *i);
 
 void			skip_space(const char *line, size_t *i);
+
+void			normalize_orientation(t_vector3 *orientation);
 
 #endif

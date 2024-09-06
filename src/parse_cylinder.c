@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:25 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 20:05:44 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:36:14 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	parse_cylinder(t_list **objects, const char *line, size_t *i)
 	cylinder = (t_cylinder *)((void *)category + sizeof(t_object_category));
 	parse_vector3(&cylinder->position, line, i);
 	parse_vector3(&cylinder->axis, line, i);
+	normalize_orientation(&cylinder->axis);
 	parse_decimal(&cylinder->diameter, line, i);
 	parse_decimal(&cylinder->height, line, i);
 	parse_vector3(&cylinder->color, line, i);

@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:22 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:23 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:35:54 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	parse_camera(t_list **cameras, const char *line, size_t *i)
 		panic("failed to malloc");
 	parse_vector3(&camera->position, line, i);
 	parse_vector3(&camera->orientation, line, i);
+	normalize_orientation(&camera->orientation);
 	parse_decimal(&camera->fov, line, i);
 	parse_newline(line, i);
 	node = ft_lstnew(camera);

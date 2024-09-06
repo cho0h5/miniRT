@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:52:34 by younghoc          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:35 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:36:28 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	parse_plane(t_list **objects, const char *line, size_t *i)
 	plane = (t_plane *)((void *)category + sizeof(t_object_category));
 	parse_vector3(&plane->position, line, i);
 	parse_vector3(&plane->normal, line, i);
+	normalize_orientation(&plane->normal);
 	parse_vector3(&plane->color, line, i);
 	parse_newline(line, i);
 	node = ft_lstnew(category);
