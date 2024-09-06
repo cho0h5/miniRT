@@ -2,7 +2,7 @@ NAME	=	miniRT
 
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft -O3 -fsanitize=address -g
+CFLAGS	=	-Wall -Wextra -Werror -Iinclude -Ilibft -O3
 LDFLAGS	=	-Llibft -lft -lmlx -framework OpenGL -framework Appkit
 
 SRC_DIR	=	./src/
