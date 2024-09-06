@@ -13,6 +13,7 @@
 #include <mlx.h>
 #include "environment.h"
 #include "screen.h"
+#include "panic.h"
 
 void	init_environment(t_environment *env)
 {
@@ -21,6 +22,8 @@ void	init_environment(t_environment *env)
 	env->ambients = NULL;
 	env->objects = NULL;
 	env->mlx = mlx_init();
+	if (env->mlx == NULL)
+		panic("failed to mlx_init");
 	env->mlx_window = mlx_new_window(env->mlx,
 			WIDTH, WIDTH, "miniRT");
 	env->image.image = mlx_new_image(env->mlx, WIDTH, WIDTH);
