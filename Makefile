@@ -68,6 +68,7 @@ SRCS	=	$(SRC_DIR)main.c						\
 			$(SRC_DIR)environment_get_camera.c		\
 			$(SRC_DIR)environment_get_light.c		\
 			$(SRC_DIR)environment_get_ambient.c		\
+			$(SRC_DIR)environment_free.c			\
 			$(SRC_DIR)equation_closest_point_on_skew_lines.c
 
 OBJS	=	$(SRCS:.c=.o)
