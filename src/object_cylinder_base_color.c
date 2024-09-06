@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 20:21:29 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 20:21:30 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:44:55 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include "color.h"
 #include "vector3.h"
 
-static t_vector3	get_cylinder_base_ambient(const t_cylinder_base *cylinder_base,
-		const t_ambient *ambient)
+static t_vector3	get_cylinder_base_ambient(
+		const t_cylinder_base *cylinder_base, const t_ambient *ambient)
 {
 	return (multiply(cylinder_base->color,
 			scale(ambient->color, ambient->ratio / 255)));
@@ -32,7 +32,8 @@ static t_vector3	get_normal_vector(const t_vector3 cylinder_base_normal,
 		return (scale(cylinder_base_normal, -1));
 }
 
-static t_vector3	get_cylinder_base_diffuse(const t_cylinder_base *cylinder_base,
+static t_vector3	get_cylinder_base_diffuse(
+						const t_cylinder_base *cylinder_base,
 						const t_environment *env, const t_vector3 ray,
 						const double distance)
 {
@@ -52,8 +53,10 @@ unsigned int	get_cylinder_base_color(const t_cylinder_base *cylinder_base,
 						const t_environment *env, const t_vector3 ray,
 						const double distance)
 {
-	const t_vector3	ambient = get_cylinder_base_ambient(cylinder_base, get_ambient(env));
-	const t_vector3	diffuse = get_cylinder_base_diffuse(cylinder_base, env, ray, distance);
+	const t_vector3	ambient = get_cylinder_base_ambient(cylinder_base,
+			get_ambient(env));
+	const t_vector3	diffuse = get_cylinder_base_diffuse(cylinder_base,
+			env, ray, distance);
 
 	if (is_shadow(env, ray, distance))
 		return (to_color(ambient));

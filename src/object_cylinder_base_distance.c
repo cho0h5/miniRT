@@ -6,7 +6,7 @@
 /*   By: younghoc <younghoc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 20:21:51 by younghoc          #+#    #+#             */
-/*   Updated: 2024/09/05 20:27:40 by younghoc         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:45:31 by younghoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ double	cylinder_base_distance(const t_vector3 pos, const t_vector3 ray,
 	const double	distance = numerator / denominator;
 	const t_vector3	hit_point = add(pos, scale(ray, distance));
 
-	if (distance > 0 && magnitude(subtract(hit_point, cylinder_base->position)) <= cylinder_base->diameter / 2)
+	if (distance > 0
+		&& magnitude(subtract(hit_point, cylinder_base->position))
+		<= cylinder_base->diameter / 2)
 		return (distance);
 	return (DOUBLE_MAX);
 }
